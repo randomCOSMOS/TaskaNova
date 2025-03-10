@@ -1,0 +1,24 @@
+{
+  "name": "taskanova",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randomCOSMOS/TaskaNova.git"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randomCOSMOS/TaskaNova/issues"
+  },
+  "homepage": "https://github.com/randomCOSMOS/TaskaNova#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.12.1"
+  }
+}
