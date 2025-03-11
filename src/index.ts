@@ -7,7 +7,7 @@ const run = async () => {
 
     let task = new Task({
         title: "chill",
-        description: "We are jusr cruising.",
+        description: "We are just cruising.",
         status: false
     })
 

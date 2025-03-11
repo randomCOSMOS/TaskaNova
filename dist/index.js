@@ -10,7 +10,7 @@ const run = async () => {
     await mongoose_1.default.connect("mongodb+srv://randomcosmos:BQNVgtp3100&**@versal.dpref.mongodb.net/test001?retryWrites=true&w=majority&appName=Versal");
     let task = new Task_js_1.Task({
         title: "chill",
-        description: "We are jusr cruising.",
+        description: "We are just cruising.",
         status: false
     });
     console.log("Adding....");
