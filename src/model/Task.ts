@@ -1,17 +1,20 @@
-// import mongoose from "mongoose";
-const mongoose = require("mongoose");
-
+import mongoose from "mongoose";
 const {Schema, model} = mongoose;
 
-const taskSchema = new Schema({
-    title: String,
-    description: String,
-    status: Boolean,
-    notes: String
+interface ITask {
+    title: string,
+    description: string,
+    status: boolean
+}
+
+const taskSchema = new Schema<ITask>({
+    title: {type: String, required: true},
+    description: {type: String, required: true},
+    status: {type: Boolean, required: true}
 });
 
-const Task = model("Task", taskSchema);
+const Task = model<ITask>("Task", taskSchema);
 // export default Task;
-export = {
+export {
     Task
 }
