@@ -3,7 +3,7 @@ import {Task} from "./model/Task.js";
 import "dotenv/config";
 
 const run = async () => {
-    await mongoose.connect("mongodb+srv://randomcosmos:BQNVgtp3100&**@versal.dpref.mongodb.net/test001?retryWrites=true&w=majority&appName=Versal");
+    await mongoose.connect(process.env.CONNECTION_STRING);
 
     let task = new Task({
         title: "chill",
