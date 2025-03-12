@@ -7,11 +7,8 @@ import { ITask } from './model/schema/Task.model';
 export class AppService {
   constructor(@InjectModel('Task') private taskModel: Model<ITask>) {}
 
-  getTasks() {
-    return {
-      bitch: 'boi',
-      balls: 'deep',
-    };
+  async getTasks() {
+    return await this.taskModel.find();
   }
 
   async postTasks(data) {
