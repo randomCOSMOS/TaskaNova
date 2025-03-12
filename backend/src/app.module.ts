@@ -8,7 +8,7 @@ import { TaskSchema } from './model/schema/Task.model';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.CONNECTION_STRING!),
+    MongooseModule.forRoot(process.env.CONNECTION_STRING),
     MongooseModule.forFeature([{ name: 'Task', schema: TaskSchema }]),
   ],
   controllers: [AppController],

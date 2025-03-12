@@ -24,9 +24,12 @@ export class AppService {
     const status: string = data.status;
 
     const newTask = new this.taskModel({ title, description, status });
-    const result = await newTask.save();
+    const res = await newTask.save();
+    response.status = res ? "success" : "error";
+    response.message = res ? "Task added!" : "Could not add task!";
+    response.data = res; 
 
-    return result;
+    return response;
   }
 
   async getTasksId(id) {
