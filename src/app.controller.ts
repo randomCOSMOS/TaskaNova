@@ -18,17 +18,17 @@ export class AppController {
   }
 
   @Get(':id')
-  getTasksId(@Param('id') id: string): string {
+  getTasksId(@Param('id') id: string) {
     return this.appService.getTasksId(id);
   }
 
   @Put(':id')
-  putTasksId(@Param('id') id: string): string {
-    return this.appService.putTasksId(id);
+  putTasks(@Param('id') id: string, @Body(new ValidationPipe) data: taskDto) {
+    return this.appService.putTasks(id, data);
   }
 
   @Delete(':id')
-  deleteTasksId(@Param('id') id: string): string {
-    return this.appService.deleteTasksId(id);
+  deleteTasks(@Param('id') id: string) {
+    return this.appService.deleteTasks(id);
   }
 }
