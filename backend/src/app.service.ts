@@ -15,7 +15,12 @@ export class AppService {
   constructor(@InjectModel('Task') private taskModel: Model<ITask>) {}
 
   async getTasks() {
-    return await this.taskModel.find();
+    const res = await this.taskModel.find();
+    response.status = res ? "success" : "error";
+    response.message = res ? "All tasks fetched!" : "Could not fetch tasks!";
+    response.data = res;
+
+    return response;
   }
 
   async postTasks(data) {

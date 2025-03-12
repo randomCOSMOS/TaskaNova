@@ -1,0 +1,9 @@
+:root {
+    --bgc: rgb(220,221,225);
+    --pc: rgb(58, 124, 240);
+    --sc: rgb(193, 194, 201);
+}
+
+body {
+    background-color: var(--bgc);
+}

@@ -2,6 +2,9 @@
   "name": "taskanova",
   "version": "1.0.0",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +13,7 @@
   "license": "ISC",
   "description": "",
   "workspaces": [
-    "backend",
-    "frontend"
+    "frontend",
+    "backend"
   ]
 }
