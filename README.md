@@ -1,6 +1,6 @@
 # Taskanova
 
-Taskanova is a monorepo project containing a **Next.js** frontend and a **Nest.js** backend. The backend serves as an API, while the frontend consumes it using **Axios** and **Redux Toolkit**.
+Taskanova is a monorepo project made to organize tasks, containing a **Next.js** frontend and a **Nest.js** backend. The backend serves as an API, while the frontend consumes it using **Axios** and **Redux Toolkit**.
 
 ## 📂 Project Structure
 ```
@@ -14,7 +14,7 @@ Taskanova is a monorepo project containing a **Next.js** frontend and a **Nest.j
 ## 🚀 Technologies Used
 - **Backend:** Nest.js, Mongoose, RxJS, Class Validator
 - **Frontend:** Next.js, React, Redux Toolkit, Axios
-- **Monorepo Tools:** Yarn Workspaces (optional: Turborepo/Nx)
+- **Monorepo Tools:** npm Workspaces
 
 ---
 
@@ -28,9 +28,7 @@ cd taskanova
 
 ### 2️⃣ Install Dependencies (for both frontend & backend)
 ```bash
-yarn install  # If using Yarn Workspaces
-# OR
-npm install   # If using npm
+npm install 
 ```
 
 ### 3️⃣ Configure Environment Variables
@@ -38,13 +36,12 @@ Create `.env` files inside both `frontend/` and `backend/` following `.env_sampl
 
 #### Example `.env` for Backend
 ```
-PORT=4000
-MONGO_URI=mongodb://localhost:27017/taskanova
+CONNECTION_STRING = "mongodb+srv://user:password@versal.dpref.mongodb.net/db?retryWrites=true&w=majority&appName=app"
 ```
 
 #### Example `.env` for Frontend
 ```
-NEXT_PUBLIC_API_URL=http://localhost:4000/api
+NEXT_PUBLIC_API=http://localhost:3000/api
 ```
 
 ---
@@ -53,29 +50,27 @@ NEXT_PUBLIC_API_URL=http://localhost:4000/api
 
 ### ▶️ Start Backend (Nest.js API)
 ```bash
-cd backend
-yarn dev  # OR npm run dev
+npm run dev -w backend
 ```
 
 ### ▶️ Start Frontend (Next.js App)
 ```bash
-cd frontend
-yarn dev  # OR npm run dev
+npm run dev -w frontend
 ```
 
 By default:
-- Backend runs on `http://localhost:4000`
+- Backend runs on `http://localhost:3000`
 - Frontend runs on `http://localhost:5000`
 
 ---
 
 ## 📌 API Endpoints
-Example API routes (handled by Nest.js backend):
+API routes (handled by Nest.js backend):
 ```
-GET    /api/tasks        # Fetch all tasks
-POST   /api/tasks        # Create a new task
-PUT    /api/tasks/:id    # Update a task
-DELETE /api/tasks/:id    # Delete a task
+GET    /tasks        # Fetch all tasks
+POST   /tasks        # Create a new task
+PUT    /tasks/:id    # Update a task
+DELETE /tasks/:id    # Delete a task
 ```
 Use **Postman** or **Thunder Client** to test the API.
 
@@ -85,32 +80,19 @@ Use **Postman** or **Thunder Client** to test the API.
 
 ### Build Backend
 ```bash
-cd backend
-yarn build  # OR npm run build
+npm run build -w backend
 ```
 
 ### Build Frontend
 ```bash
-cd frontend
-yarn build  # OR npm run build
+npm run build -w frontend
 ```
 
 ### Start in Production
 ```bash
-yarn start  # OR npm run start
+npm run start -w backend
+npm run start -w frontend
 ```
-
----
-
-## 🛠️ Useful Commands
-
-| Command                | Description                      |
-|------------------------|----------------------------------|
-| `yarn dev`            | Start development mode          |
-| `yarn build`          | Build for production            |
-| `yarn start`          | Start the server                |
-| `yarn lint`           | Lint the code                   |
-| `yarn test`           | Run tests (backend only)        |
 
 ---
 
@@ -135,5 +117,5 @@ Give this project a ⭐ on GitHub if you found it useful!
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Srijan Thakur
 
