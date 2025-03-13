@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bgc: rgb(220,221,225);
     --pc: rgb(58, 124, 240);
@@ -6,4 +11,34 @@
 
 body {
     background-color: var(--bgc);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--pc);
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+}
+
+nav > ul {
+    display: flex;
+}
+
+nav > img {
+    width: 200px;
+    height: auto;
+}
+
+nav li:not(:last-child) {
+    margin-right: 20px;
+}
+
+nav li {
+    cursor: pointer;
+    font-family: var(--font-quattrocento-sans);
+    list-style-type: none;
+    font-size: 1.3em;
+    font-weight: bold;
 }

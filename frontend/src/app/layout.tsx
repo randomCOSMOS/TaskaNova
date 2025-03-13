@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quattrocento, Quattrocento_Sans, Quicksand} from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/store/StoreProvider";
+import ClientComponent from "./clientComponent";
 
 const quat = Quattrocento({
   variable: "--font-quattrocento",
@@ -36,6 +37,10 @@ export default function RootLayout({
     <StoreProvider>
     <html lang="en">
       <body className={`${quat.variable} ${quatSans.variable} ${quick.variable}`}>
+        <nav>
+          <img src="/png/logo-no-background.png" alt="Logo" />
+          <ClientComponent />
+        </nav>
         {children}
       </body>
     </html>

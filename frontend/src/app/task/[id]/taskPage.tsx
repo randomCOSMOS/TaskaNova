@@ -23,23 +23,34 @@ export default function TaskPage({id} : {id : string}){
   });
 
   const del = () => {
-    dispatch(deleteTasks({id}));
-    router.push(origin);
+    const ans = prompt("Enter \"Confirm\" to delete the task:");
+    if (ans=="Confirm"){
+      dispatch(deleteTasks({id}));
+      router.push(origin);
+    } else {
+      alert("Invalid answer!")
+    }
+  }
+
+  const edit = () => {
+    router.push(origin+`/edit/`+id);
   }
 
   return (
-    <div>
-        <h1>Looking for task: {id}??</h1>
-
-        {tasks.map((task: any, index:any) => (
-          <li key={index}>
-            <strong>{task.title}</strong> - {task.description} ({task.status})
-          </li>
-        ))}
-        <button>Edit</button>
-        <button onClick={del}>Delete</button>
-        <br />
-        <a href={origin}>Home!</a>
+    <div className="task-list">
+  {tasks.map((task: any, index: any) => (
+    <div key={index} className="task-item">
+      <div className="task-header">
+        <strong className="task-title">{task.title}</strong>
+        <span className="task-status">({task.status})</span>
       </div>
+      <p className="task-description">{task.description}</p>
+      <div className="task-actions">
+        <button className="edit-btn" onClick={edit}>Edit</button>
+        <button className="delete-btn" onClick={del}>Delete</button>
+      </div>
+    </div>
+  ))}
+</div>
     );
 }

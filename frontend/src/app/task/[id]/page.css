@@ -1,0 +1,78 @@
+.task-list {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: var(--font-quattrocento-sans);
+  }
+  
+  .task-item {
+    border-bottom: 1px solid var(--sc);
+    padding: 15px 0;
+  }
+  
+  .task-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Title and Status in One Line */
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Status Styling */
+  .task-status {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--pc);
+  }
+  
+  /* Description Below */
+  .task-description {
+    margin-top: 5px;
+    font-size: 16px;
+    color: rgb(50, 50, 50);
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+  
+  /* Action Buttons */
+  .task-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    font-family: var(--font-quattrocento-sans);
+    border: 2px solid var(--sc);
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+  }
+  
+  .edit-btn {
+    background: var(--pc);
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background: rgb(40, 105, 220);
+  }
+  
+  .delete-btn {
+    background: transparent;
+    color: black;
+  }
+  
+  .delete-btn:hover {
+    background: rgb(220, 58, 58);
+    color: white;
+  }
+  

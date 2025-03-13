@@ -1,0 +1,108 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table {
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0;
+    margin-top: 30px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.heading {
+    background-color: var(--sc);
+    border-radius: 20px 20px 0px 0px;
+    font-family: var(--font-quattrocento);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 20px 0 !important;
+}
+
+.table li {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    text-align: left;
+    font-family: var(--font-quattrocento-sans);
+    padding: 10px 0;
+    position: relative;
+}
+
+.table li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 95%; /* Shorter border */
+    height: 1px;
+    background-color: var(--sc);
+    transform: translateX(-50%); /* Centers it */
+}
+
+li>p, li>a {
+    width: 200px;
+}
+
+li>p:first-child {
+    padding-left: 20px;
+}
+
+.actions {
+    display: flex;
+}
+
+.actions img {
+    cursor: pointer;
+}
+
+.actions img {
+    width: 20px;
+    height: 20px;
+}
+
+.actions img:last-child{
+    width: 25px;
+    height: 25px;
+}
+
+.actions img:not(:first-child) {
+    margin-left: 20px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.add-task {
+    all: unset; /* Removes default styles */
+    display: inline-block;
+    background-color: var(--pc);
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-quattrocento-sans);
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+.add-task:hover {
+    background-color: rgb(47, 105, 210);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.add-task:active {
+    background-color: rgb(40, 90, 180);
+    transform: translateY(2px);
+}
